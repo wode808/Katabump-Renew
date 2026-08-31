@@ -7,7 +7,7 @@ USERNAME = ""
 PASSWORD = ""
 LOCAL_PROXY = "http://127.0.0.1:8080"
 
-TARGET_SERVER_ID = "233971"
+TARGET_SERVER_ID = "368766"
 TARGET_URL = f"https://dashboard.katabump.com/servers/edit?id={TARGET_SERVER_ID}"
 
 
