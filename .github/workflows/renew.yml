@@ -57,6 +57,21 @@ jobs:
           GOST_PROXY: ${{ secrets.GOST_PROXY }}
           TG_BOT: ${{ secrets.TG_BOT }}
         run: |
+          echo "========== CHECK renew.py =========="
+          pwd
+          ls -lah renew.py
+          sha256sum renew.py
+          
+          echo "----- VERSION CHECK -----"
+          grep -n "Renew 候选元素" renew.py || true
+          grep -n "DOM 中确认存在 Renew" renew.py || true
+          grep -n "Renew按钮缺失" renew.py || true
+          grep -n "TARGET_SERVER_ID" renew.py || true
+          
+          echo "----- RENEW CODE -----"
+          sed -n '285,390p' renew.py
+          
+          echo "=========================="
           xvfb-run --auto-servernum --server-args="-screen 0 1920x1080x24" python renew.py
       - name: 📸 上传截图
         if: always()
