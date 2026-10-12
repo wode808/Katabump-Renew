@@ -56,6 +56,7 @@ jobs:
           KATABUMP_SERVER_ID: ${{ secrets.KATABUMP_SERVER_ID }}
           GOST_PROXY: ${{ secrets.GOST_PROXY }}
           TG_BOT: ${{ secrets.TG_BOT }}
+          CRON_JOB: ${{ secrets.CRON_JOB }}
         run: |
           echo "========== CHECK renew.py =========="
           pwd
